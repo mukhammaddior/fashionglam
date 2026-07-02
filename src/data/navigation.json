@@ -1,0 +1,88 @@
+{
+  "navItems": [
+    {
+      "label": "HOME",
+      "href": "/",
+      "type": "link"
+    },
+    {
+      "label": "MEN",
+      "href": "/men",
+      "type": "megamenu",
+      "categories": [
+        {
+          "title": "Clothing",
+          "links": [
+            { "label": "T-Shirts", "href": "/shop/men/clothing/t-shirts" },
+            { "label": "Shirts", "href": "/shop/men/clothing/shirts" },
+            { "label": "Jeans", "href": "/shop/men/clothing/jeans" },
+            { "label": "Jackets & Coats", "href": "/shop/men/clothing/jackets" }
+          ]
+        },
+        {
+          "title": "Accessories",
+          "links": [
+            { "label": "Bags", "href": "/shop/men/accessories/bags" },
+            { "label": "Belts", "href": "/shop/men/accessories/belts" },
+            { "label": "Sunglasses", "href": "/shop/men/accessories/sunglasses" },
+            { "label": "Watches", "href": "/shop/men/accessories/watches" }
+          ]
+        },
+        {
+          "title": "Shoes",
+          "links": [
+            { "label": "Sneakers", "href": "/shop/men/shoes/sneakers" },
+            { "label": "Boots", "href": "/shop/men/shoes/boots" },
+            { "label": "Formal Shoes", "href": "/shop/men/shoes/formal" },
+            { "label": "Sandals", "href": "/shop/men/shoes/sandals" }
+          ]
+        }
+      ],
+      "featuredImage": "/image/men-featured.webp",
+      "featuredLink": "/shop/men/new-arrivals",
+      "featuredText": "Shop New Arrivals"
+    },
+    {
+      "label": "WOMEN",
+      "href": "/women",
+      "type": "megamenu",
+      "categories": [
+        {
+          "title": "Clothing",
+          "links": [
+            { "label": "Dresses", "href": "/shop/women/clothing/dresses" },
+            { "label": "Tops", "href": "/shop/women/clothing/tops" },
+            { "label": "Skirts", "href": "/shop/women/clothing/skirts" },
+            { "label": "Outerwear", "href": "/shop/women/clothing/outerwear" }
+          ]
+        },
+        {
+          "title": "Accessories",
+          "links": [
+            { "label": "Jewelry", "href": "/shop/women/accessories/jewelry" },
+            { "label": "Bags", "href": "/shop/women/accessories/bags" },
+            { "label": "Belts", "href": "/shop/women/accessories/belts" },
+            { "label": "Sunglasses", "href": "/shop/women/accessories/sunglasses" }
+          ]
+        },
+        {
+          "title": "Shoes",
+          "links": [
+            { "label": "Heels", "href": "/shop/women/shoes/heels" },
+            { "label": "Flats", "href": "/shop/women/shoes/flats" },
+            { "label": "Sneakers", "href": "/shop/women/shoes/sneakers" },
+            { "label": "Boots", "href": "/shop/women/shoes/boots" }
+          ]
+        }
+      ],
+      "featuredImage": "/image/women-featured.webp",
+      "featuredLink": "/shop/women/trending",
+      "featuredText": "Discover Trending"
+    },
+    {
+      "label": "ABOUT",
+      "href": "/about",
+      "type": "link"
+    }
+  ]
+}

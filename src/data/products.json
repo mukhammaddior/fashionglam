@@ -1,0 +1,49 @@
+[
+  {
+    "id": "item-1",
+    "type": "product",
+    "image": "/image/trending/cool-hat.png",
+    "title": "Cool Hat",
+    "price": 1250.00
+  },
+  {
+    "id": "item-2",
+    "type": "banner",
+    "image": "/image/trending/make-fashion.png",
+    "heading": ["Make Your", "Fashion"],
+    "description": "Lorem ipsum dolor sit amet consectetur. Pharetra sit fermentum non vulputate morbi. Donec sed est.",
+    "linkUrl": "/shop",
+    "linkText": "Shop All"
+  },
+  {
+    "id": "item-3",
+    "type": "product",
+    "image": "/image/trending/glassy-glass.png",
+    "title": "Glassy Glass",
+    "price": 1250.00
+  },
+  {
+    "id": "item-4",
+    "type": "banner",
+    "image": "/image/trending/look-good.png",
+    "heading": ["Look good", "Feel good"],
+    "description": "Lorem ipsum dolor sit amet consectetur. Pharetra sit fermentum non vulputate morbi. Donec sed est.",
+    "linkUrl": "/shop",
+    "linkText": "Shop All"
+  },
+  {
+    "id": "item-5",
+    "type": "product",
+    "image": "/image/trending/white-shirt.png",
+    "title": "White shirt",
+    "price": 1250.00
+  },
+  {
+    "id": "item-6",
+    "type": "product",
+    "image": "/image/trending/black-top.png",
+    "title": "Black top",
+    "price": 1250.00
+  }
+]
+
