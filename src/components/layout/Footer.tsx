@@ -83,8 +83,8 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <span className="whitespace-nowrap">We ship with:</span>
                 <div className="flex items-center gap-3 grayscale opacity-70">
-                  <Image src="/image/payments/fa-brands_dhl.svg" alt="DHL" width={40} height={25} className="h-[22px] w-auto object-contain" />
-                  <Image src="/image/payments/arcticons_post.svg" alt="Post" width={25} height={25} className="h-6 w-auto object-contain" />
+                  <Image src="/image/payments/fa-brands_dhl.svg" alt="DHL" width={40} height={24} className="h-6 w-auto object-contain" />
+                  <Image src="/image/payments/arcticons_post.svg" alt="Post" width={40} height={24} className="h-6 w-auto object-contain" />
                 </div>
               </div>
               
@@ -92,9 +92,9 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <span className="whitespace-nowrap">Payment options:</span>
                 <div className="flex items-center gap-3 grayscale opacity-70">
-                  <Image src="/image/payments/brandico_visa.svg" alt="Visa" width={40} height={25} className="h-5 w-auto object-contain" />
-                  <Image src="/image/payments/brandico_mastercard.svg" alt="Mastercard" width={35} height={25} className="h-5 w-auto object-contain" />
-                  <Image src="/image/payments/fontisto_paypal.svg" alt="PayPal" width={35} height={25} className="h-[17px] w-auto object-contain" />
+                  <Image src="/image/payments/brandico_visa.svg" alt="Visa" width={40} height={24} className="h-6 w-auto object-contain" />
+                  <Image src="/image/payments/brandico_mastercard.svg" alt="Mastercard" width={40} height={22} className="h-6 w-auto object-contain" />
+                  <Image src="/image/payments/fontisto_paypal.svg" alt="PayPal" width={20} height={12} className="h-4 w-auto object-contain" />
                 </div>
               </div>
             </div>
