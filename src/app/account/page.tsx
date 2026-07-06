@@ -71,18 +71,28 @@ export default function AccountPage() {
             <div className="space-y-8">
               {orders.map((order) => (
                 <div key={order.id} className="border border-gray-200 p-6">
-                  <div className="flex flex-col md:flex-row justify-between border-b border-gray-200 pb-4 mb-4 gap-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-gray-400">Order Number</p>
-                      <p className="font-medium mt-1">{order.id}</p>
+                  <div className="flex flex-col md:flex-row justify-between border-b border-gray-200 pb-4 mb-4 gap-4 items-start md:items-center">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-12 flex-grow">
+                      <div>
+                        <p className="text-xs uppercase tracking-widest text-gray-400">Order Number</p>
+                        <p className="font-medium mt-1">{order.id}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-widest text-gray-400">Date Placed</p>
+                        <p className="font-medium mt-1">{new Date(order.date).toLocaleDateString()}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-widest text-gray-400">Total Amount</p>
+                        <p className="font-medium mt-1">${order.total.toFixed(2)}</p>
+                      </div>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-gray-400">Date Placed</p>
-                      <p className="font-medium mt-1">{new Date(order.date).toLocaleDateString()}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-gray-400">Total Amount</p>
-                      <p className="font-medium mt-1">${order.total.toFixed(2)}</p>
+                      <Link 
+                        href={`/account/order/${order.id}`}
+                        className="inline-block px-4 py-2 border border-black text-xs font-medium uppercase tracking-widest hover:bg-black hover:text-white transition-colors whitespace-nowrap"
+                      >
+                        View Details
+                      </Link>
                     </div>
                   </div>
                   

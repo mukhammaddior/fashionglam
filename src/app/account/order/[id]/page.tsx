@@ -5,39 +5,40 @@ import { useRouter } from 'next/navigation'
 import { useShopStore, Order } from '@/lib/store'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle2 } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
+import { use } from 'react'
 
-export default function CheckoutSuccessPage() {
+export default function OrderDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params)
   const { orders, user } = useShopStore()
   const router = useRouter()
-  const [latestOrder, setLatestOrder] = useState<Order | null>(null)
+  const [order, setOrder] = useState<Order | null>(null)
 
   useEffect(() => {
     if (!user) {
       router.push('/login')
       return
     }
-    if (orders.length === 0) {
-      router.push('/shop/women')
+    
+    const foundOrder = orders.find(o => o.id === resolvedParams.id)
+    if (!foundOrder) {
+      router.push('/account')
       return
     }
     
-    // The latest order is the first one in the array because we prepend it in placeOrder
-    setLatestOrder(orders[0])
-  }, [user, orders, router])
+    setOrder(foundOrder)
+  }, [user, orders, router, resolvedParams.id])
 
-  if (!latestOrder) {
+  if (!order) {
     return null
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-20">
-      <div className="text-center mb-12">
-        <div className="flex justify-center mb-6">
-          <CheckCircle2 className="w-20 h-20 text-green-500" />
-        </div>
-        <h1 className="text-3xl font-light uppercase tracking-widest mb-4">Thank You for Your Order</h1>
-        <p className="text-gray-500 font-light">Your order has been successfully placed and is being processed.</p>
+    <div className="max-w-3xl mx-auto px-4 py-16">
+      <div className="mb-8">
+        <Link href="/account" className="inline-flex items-center text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors">
+          <ChevronLeft className="w-4 h-4 mr-1" /> Back to Account
+        </Link>
       </div>
 
       <div className="border border-gray-200 p-8 md:p-12 bg-gray-50 mb-12">
@@ -46,23 +47,23 @@ export default function CheckoutSuccessPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 text-sm font-light">
           <div>
             <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">Order Details</p>
-            <p><span className="font-medium">Order Number:</span> {latestOrder.id}</p>
-            <p><span className="font-medium">Date:</span> {new Date(latestOrder.date).toLocaleString()}</p>
-            <p><span className="font-medium">Payment:</span> {latestOrder.paymentDetails ? `Credit Card ending in **${latestOrder.paymentDetails.last4}` : 'Pay on Delivery'}</p>
+            <p><span className="font-medium">Order Number:</span> {order.id}</p>
+            <p><span className="font-medium">Date:</span> {new Date(order.date).toLocaleString()}</p>
+            <p><span className="font-medium">Payment:</span> {order.paymentDetails ? `Credit Card ending in **${order.paymentDetails.last4}` : 'Pay on Delivery'}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">Shipping Address</p>
-            <p className="font-medium">{latestOrder.shippingAddress.fullName}</p>
-            <p>{latestOrder.shippingAddress.address}</p>
-            <p>{latestOrder.shippingAddress.city}, {latestOrder.shippingAddress.zipCode}</p>
-            <p>{latestOrder.shippingAddress.phone}</p>
+            <p className="font-medium">{order.shippingAddress?.fullName}</p>
+            <p>{order.shippingAddress?.address}</p>
+            <p>{order.shippingAddress?.city}, {order.shippingAddress?.zipCode}</p>
+            <p>{order.shippingAddress?.phone}</p>
           </div>
         </div>
 
         <div className="border-t border-gray-200 pt-8">
           <p className="text-xs uppercase tracking-widest text-gray-400 mb-6">Items Purchased</p>
           <div className="space-y-6">
-            {latestOrder.items.map((item, index) => (
+            {order.items.map((item, index) => (
               <div key={`${item.id}-${index}`} className="flex gap-4 items-center">
                 <div className="relative w-16 h-20 bg-gray-100 shrink-0">
                   <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />
@@ -82,18 +83,9 @@ export default function CheckoutSuccessPage() {
         <div className="border-t border-gray-200 mt-8 pt-6">
           <div className="flex justify-between text-lg font-medium uppercase tracking-wider">
             <span>Total Paid</span>
-            <span>${latestOrder.total.toFixed(2)}</span>
+            <span>${order.total.toFixed(2)}</span>
           </div>
         </div>
-      </div>
-
-      <div className="text-center">
-        <Link 
-          href="/shop/women"
-          className="inline-block px-10 py-4 bg-black text-white text-sm font-medium uppercase tracking-widest hover:bg-gray-900 transition-colors"
-        >
-          Continue Shopping
-        </Link>
       </div>
     </div>
   )
