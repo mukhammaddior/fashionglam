@@ -76,30 +76,30 @@ export default function Footer() {
           </div>
 
           {/* Eng pastki qator (Copyright va To'lov usullari) */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] md:text-[10px] font-mono text-gray-500 tracking-widest w-full">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-8 text-[9px] md:text-[10px] font-mono text-gray-500 tracking-widest w-full mt-4">
             
-            <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+            <div className="flex flex-col sm:flex-row items-center gap-6 lg:gap-8 w-full lg:w-auto justify-center lg:justify-start">
               {/* Shipping */}
-              <div className="flex items-center gap-3">
-                <span className="whitespace-nowrap">We ship with:</span>
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <span className="whitespace-nowrap mb-2 sm:mb-0">We ship with:</span>
                 <div className="flex items-center gap-3 grayscale opacity-70">
-                  <Image src="/image/payments/fa-brands_dhl.svg" alt="DHL" width={40} height={24} className="h-6 w-auto object-contain" />
-                  <Image src="/image/payments/arcticons_post.svg" alt="Post" width={40} height={24} className="h-6 w-auto object-contain" />
+                  <Image src="/image/payments/fa-brands_dhl.svg" alt="DHL" width={40} height={24} className="h-5 sm:h-6 w-auto object-contain" />
+                  <Image src="/image/payments/arcticons_post.svg" alt="Post" width={40} height={24} className="h-5 sm:h-6 w-auto object-contain" />
                 </div>
               </div>
               
               {/* Payment Options */}
-              <div className="flex items-center gap-3">
-                <span className="whitespace-nowrap">Payment options:</span>
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <span className="whitespace-nowrap mb-2 sm:mb-0">Payment options:</span>
                 <div className="flex items-center gap-3 grayscale opacity-70">
-                  <Image src="/image/payments/brandico_visa.svg" alt="Visa" width={40} height={24} className="h-6 w-auto object-contain" />
-                  <Image src="/image/payments/brandico_mastercard.svg" alt="Mastercard" width={40} height={22} className="h-6 w-auto object-contain" />
-                  <Image src="/image/payments/fontisto_paypal.svg" alt="PayPal" width={20} height={12} className="h-4 w-auto object-contain" />
+                  <Image src="/image/payments/brandico_visa.svg" alt="Visa" width={40} height={24} className="h-5 sm:h-6 w-auto object-contain" />
+                  <Image src="/image/payments/brandico_mastercard.svg" alt="Mastercard" width={40} height={22} className="h-5 sm:h-6 w-auto object-contain" />
+                  <Image src="/image/payments/fontisto_paypal.svg" alt="PayPal" width={40} height={24} className="h-4 sm:h-5 w-auto object-contain" />
                 </div>
               </div>
             </div>
 
-            <div>
+            <div className="text-center lg:text-right w-full lg:w-auto mt-2 lg:mt-0">
               © Copyright {new Date().getFullYear()} Fashionista. Design by TemplatesJungle
             </div>
           </div>

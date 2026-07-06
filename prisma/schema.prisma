@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  name          String
+  description   String
+  price         Float
+  originalPrice Float?
+  gender        String   // "men", "women"
+  category      String   // "clothing", "accessories", "shoes"
+  subCategory   String   // "t-shirts", "dresses", "sneakers"
+  imageUrl      String   
+  hoverImageUrl String?  
+  images        String   // JSON string: '["img1.jpg", "img2.jpg"]'
+  sizes         String   // JSON string: '["S", "M", "L"]'
+  colors        String?  // JSON string
+  isTrending    Boolean  @default(false)
+  isNewArrival  Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   // "Clothing"
+  slug        String   @unique // "clothing"
+  description String?
+  gender      String   // "men", "women"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id         String   @id @default(cuid())
+  userId     String?
+  total      Float
+  status     String   @default("PENDING") // PENDING, PAID, SHIPPED, DELIVERED
+  items      String   // JSON string of CartItem[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}

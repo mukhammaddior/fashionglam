@@ -7,7 +7,7 @@
     },
     {
       "label": "MEN",
-      "href": "/men",
+      "href": "/shop/men",
       "type": "megamenu",
       "categories": [
         {
@@ -44,7 +44,7 @@
     },
     {
       "label": "WOMEN",
-      "href": "/women",
+      "href": "/shop/women",
       "type": "megamenu",
       "categories": [
         {
@@ -75,7 +75,7 @@
           ]
         }
       ],
-      "featuredImage": "/image/women-featured.webp",
+      "featuredImage": "/image/women-featured.jpg",
       "featuredLink": "/shop/women/trending",
       "featuredText": "Discover Trending"
     },
