@@ -22,7 +22,7 @@ export default function WishlistButton({ slug, className }: WishlistButtonProps)
         toggleWishlist(slug)
       }}
       className={`absolute top-4 right-4 p-2 bg-white rounded-full transition-all duration-300 shadow-sm z-10 ${
-        isWishlisted ? 'text-red-500 opacity-100' : 'text-black hover:bg-black hover:text-white opacity-0 group-hover:opacity-100'
+        isWishlisted ? 'text-red-500 opacity-100' : 'text-black hover:bg-black hover:text-white opacity-100 lg:opacity-0 group-hover:opacity-100'
       } ${className || ''}`}
       aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
     >
