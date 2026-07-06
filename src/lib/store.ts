@@ -17,11 +17,20 @@ export type User = {
   email: string
 }
 
+export type ShippingAddress = {
+  fullName: string
+  address: string
+  city: string
+  zipCode: string
+  phone: string
+}
+
 export type Order = {
   id: string
   date: string
   total: number
   items: CartItem[]
+  shippingAddress: ShippingAddress
 }
 
 interface ShopState {
@@ -37,7 +46,7 @@ interface ShopState {
   toggleWishlist: (slug: string) => void
   login: (user: User) => void
   logout: () => void
-  placeOrder: (total: number) => void
+  placeOrder: (total: number, shippingAddress: ShippingAddress) => void
 }
 
 export const useShopStore = create<ShopState>()(
@@ -96,12 +105,13 @@ export const useShopStore = create<ShopState>()(
       
       logout: () => set({ user: null }),
       
-      placeOrder: (total) => set((state) => {
+      placeOrder: (total, shippingAddress) => set((state) => {
         const newOrder = {
           id: `ORD-${Math.floor(Math.random() * 1000000)}`,
           date: new Date().toISOString(),
           total,
-          items: [...state.cart]
+          items: [...state.cart],
+          shippingAddress
         }
         return {
           orders: [newOrder, ...state.orders],

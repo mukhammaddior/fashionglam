@@ -7,7 +7,7 @@ import { Trash2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
 export default function CartClient() {
-  const { cart, removeFromCart, incrementQuantity, decrementQuantity, user, placeOrder } = useShopStore()
+  const { cart, removeFromCart, incrementQuantity, decrementQuantity, user } = useShopStore()
   const router = useRouter()
 
   if (cart.length === 0) {
@@ -30,8 +30,7 @@ export default function CartClient() {
     if (!user) {
       router.push('/login')
     } else {
-      placeOrder(subtotal)
-      router.push('/account')
+      router.push('/checkout')
     }
   }
 
