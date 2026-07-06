@@ -20,7 +20,7 @@ export default async function TrendingItems() {
     linkUrl: "/shop/women"
   };
 
-  const items = [];
+  const items: any[] = [];
   displayProducts.forEach((p, index) => {
     if (index === 1) {
       items.push(bannerItem);
