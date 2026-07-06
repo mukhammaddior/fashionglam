@@ -42,7 +42,7 @@ export default function Footer() {
                 <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
                 <li><Link href="/about" className="hover:text-black transition-colors">About</Link></li>
                 <li><Link href="/services" className="hover:text-black transition-colors">Services</Link></li>
-                <li><Link href="/shop" className="hover:text-black transition-colors">Single Item</Link></li>
+                <li><Link href="/shop/women" className="hover:text-black transition-colors">Single Item</Link></li>
                 <li><Link href="/contact" className="hover:text-black transition-colors">Contact</Link></li>
               </ul>
             </div>
@@ -51,12 +51,12 @@ export default function Footer() {
             <div>
               <h4 className="text-base font-serif uppercase tracking-widest mb-6 text-black">Help & Info</h4>
               <ul className="flex flex-col gap-3 text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">
-                <li><Link href="#" className="hover:text-black transition-colors">Track Your Order</Link></li>
-                <li><Link href="#" className="hover:text-black transition-colors">Returns + Exchanges</Link></li>
-                <li><Link href="#" className="hover:text-black transition-colors">Shipping + Delivery</Link></li>
-                <li><Link href="#" className="hover:text-black transition-colors">Contact Us</Link></li>
-                <li><Link href="#" className="hover:text-black transition-colors">Find Us Easy</Link></li>
-                <li><Link href="#" className="hover:text-black transition-colors">FAQs</Link></li>
+                <li><Link href="/track-order" className="hover:text-black transition-colors">Track Your Order</Link></li>
+                <li><Link href="/returns" className="hover:text-black transition-colors">Returns + Exchanges</Link></li>
+                <li><Link href="/shipping" className="hover:text-black transition-colors">Shipping + Delivery</Link></li>
+                <li><Link href="/contact" className="hover:text-black transition-colors">Contact Us</Link></li>
+                <li><Link href="/find-us" className="hover:text-black transition-colors">Find Us Easy</Link></li>
+                <li><Link href="/faqs" className="hover:text-black transition-colors">FAQs</Link></li>
               </ul>
             </div>
 
