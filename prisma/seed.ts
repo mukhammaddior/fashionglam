@@ -55,7 +55,7 @@ async function main() {
   const sizesJSON = JSON.stringify(["S", "M", "L", "XL"])
   const colorsJSON = JSON.stringify(["Black", "White", "Navy"])
 
-  const allProducts = []
+  const allProducts: any[] = []
 
   // Generate Men Products (using /image/men)
   const menGroups = getGroupedImages('image/men')
