@@ -12,7 +12,7 @@ export default function NavIcons() {
   const wishlistCount = wishlist.length;
 
   return (
-    <div className="flex items-center space-x-3 sm:space-x-6 md:space-x-8 text-black">
+    <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8 text-black">
       <Link href="/wishlist" aria-label="Wishlist" className="hover:opacity-60 transition-opacity cursor-pointer relative">
         <Heart className="w-5 h-5 md:w-[18px] md:h-[18px] fill-current text-black stroke-[1.5]" />
         {wishlistCount > 0 && (

@@ -99,7 +99,7 @@ export default async function ShopPage({
               <Link href={`/shop/${gender || 'women'}`} className="mt-6 inline-block text-xs uppercase tracking-widest border-b border-black text-black pb-1">View All Products</Link>
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 sm:gap-x-4 sm:gap-y-8 md:gap-x-6 md:gap-y-10">
               {products.map((product) => (
                 <Link key={product.id} href={`/product/${product.slug}`} className="group cursor-pointer flex flex-col">
                   <div className="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-4">

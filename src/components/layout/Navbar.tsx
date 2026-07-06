@@ -42,7 +42,7 @@ export default function Navbar() {
         </div>
 
         {/* Middle: Logo (Absolutely Centered) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[18px] sm:text-2xl md:text-3xl font-brand tracking-[0.1em] md:tracking-[0.15em] text-black uppercase font-medium whitespace-nowrap z-40">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[14px] sm:text-[18px] md:text-3xl font-brand tracking-[0.05em] sm:tracking-[0.1em] md:tracking-[0.15em] text-black uppercase font-medium whitespace-nowrap z-40">
           <Link href="/">FASHIONGLAM</Link>
         </div>
 

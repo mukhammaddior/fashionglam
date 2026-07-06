@@ -73,7 +73,7 @@ export default async function TrendingItems() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
           {items.map((item) => {
             if (item.type === 'product') {
               return (
@@ -103,7 +103,7 @@ export default async function TrendingItems() {
                     className="object-cover grayscale opacity-40"
                   />
                   <div className="relative z-10 flex flex-col items-start w-full">
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl leading-[1.2] font-serif mb-2 lg:mb-4 uppercase tracking-wide text-left">
+                    <h3 className="text-[12px] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-[1.2] font-serif mb-2 lg:mb-4 uppercase tracking-wide text-left">
                       {item.heading?.map((line: string, idx: number) => (
                         <span key={idx}>
                           {line}
@@ -111,12 +111,12 @@ export default async function TrendingItems() {
                         </span>
                       ))}
                     </h3>
-                    <p className="text-[9px] lg:text-[10px] opacity-90 mb-4 lg:mb-8 max-w-[280px] leading-relaxed text-left font-mono tracking-widest break-words">
+                    <p className="text-[7px] sm:text-[9px] lg:text-[10px] opacity-90 mb-3 sm:mb-4 lg:mb-8 max-w-[280px] leading-relaxed text-left font-mono tracking-widest break-words">
                       {item.description}
                     </p>
                     <Link 
                       href={item.linkUrl || "/shop"} 
-                      className="inline-block px-5 py-2 lg:px-10 lg:py-3 bg-white text-black rounded-[30px] text-[8px] lg:text-[11px] font-brand font-bold tracking-[0.2em] lg:tracking-[0.3em] uppercase hover:bg-gray-200 transition-colors"
+                      className="inline-block px-3 py-1.5 sm:px-5 sm:py-2 lg:px-10 lg:py-3 bg-white text-black rounded-[30px] text-[7px] sm:text-[8px] lg:text-[11px] font-brand font-bold tracking-[0.2em] lg:tracking-[0.3em] uppercase hover:bg-gray-200 transition-colors"
                     >
                       {item.linkText}
                     </Link>
