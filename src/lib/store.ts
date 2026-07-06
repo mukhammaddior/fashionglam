@@ -12,15 +12,32 @@ export type CartItem = {
   quantity: number
 }
 
+export type User = {
+  name: string
+  email: string
+}
+
+export type Order = {
+  id: string
+  date: string
+  total: number
+  items: CartItem[]
+}
+
 interface ShopState {
   cart: CartItem[]
   wishlist: string[] // Array of product slugs
+  user: User | null
+  orders: Order[]
   addToCart: (item: Omit<CartItem, 'quantity'>) => void
   removeFromCart: (id: string, size?: string, color?: string) => void
   incrementQuantity: (id: string, size?: string, color?: string) => void
   decrementQuantity: (id: string, size?: string, color?: string) => void
   clearCart: () => void
   toggleWishlist: (slug: string) => void
+  login: (user: User) => void
+  logout: () => void
+  placeOrder: (total: number) => void
 }
 
 export const useShopStore = create<ShopState>()(
@@ -28,6 +45,8 @@ export const useShopStore = create<ShopState>()(
     (set) => ({
       cart: [],
       wishlist: [],
+      user: null,
+      orders: [],
       
       addToCart: (item) => set((state) => {
         const existingItem = state.cart.find(
@@ -72,6 +91,23 @@ export const useShopStore = create<ShopState>()(
           ? state.wishlist.filter((w) => w !== slug)
           : [...state.wishlist, slug]
       })),
+
+      login: (user) => set({ user }),
+      
+      logout: () => set({ user: null }),
+      
+      placeOrder: (total) => set((state) => {
+        const newOrder = {
+          id: `ORD-${Math.floor(Math.random() * 1000000)}`,
+          date: new Date().toISOString(),
+          total,
+          items: [...state.cart]
+        }
+        return {
+          orders: [newOrder, ...state.orders],
+          cart: [] // Clear cart after placing order
+        }
+      }),
     }),
     {
       name: 'fashionglam-store',

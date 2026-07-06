@@ -4,9 +4,11 @@ import { useShopStore } from '@/lib/store'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Trash2 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export default function CartClient() {
-  const { cart, removeFromCart, incrementQuantity, decrementQuantity } = useShopStore()
+  const { cart, removeFromCart, incrementQuantity, decrementQuantity, user, placeOrder } = useShopStore()
+  const router = useRouter()
 
   if (cart.length === 0) {
     return (
@@ -23,6 +25,15 @@ export default function CartClient() {
   }
 
   const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+
+  const handleCheckout = () => {
+    if (!user) {
+      router.push('/login')
+    } else {
+      placeOrder(subtotal)
+      router.push('/account')
+    }
+  }
 
   return (
     <div className="flex flex-col lg:flex-row gap-12">
@@ -111,7 +122,10 @@ export default function CartClient() {
             <span>Total</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-          <button className="w-full py-4 bg-black text-white text-sm font-medium uppercase tracking-widest hover:bg-gray-900 transition-colors">
+          <button 
+            onClick={handleCheckout}
+            className="w-full py-4 bg-black text-white text-sm font-medium uppercase tracking-widest hover:bg-gray-900 transition-colors"
+          >
             Proceed to Checkout
           </button>
         </div>
